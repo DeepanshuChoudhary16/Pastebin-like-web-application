@@ -79,7 +79,8 @@ export default function HomePage() {
           style={{ ...inputStyle, resize: "vertical" }}
         />
 
-        <br /><br />
+        <br />
+        <br />
 
         <input
           type="number"
@@ -89,7 +90,8 @@ export default function HomePage() {
           style={inputStyle}
         />
 
-        <br /><br />
+        <br />
+        <br />
 
         <input
           type="number"
@@ -99,8 +101,9 @@ export default function HomePage() {
           style={inputStyle}
         />
 
-        <br /><br />
-
+        <br />
+        <br />
+        <p><i>Please wait for 5 seconds after clicking Create Paste button</i></p>
         <button
           type="submit"
           style={{
@@ -108,8 +111,7 @@ export default function HomePage() {
             backgroundColor: "#2563eb",
             color: "#fff",
             border: "1px solid #2563eb",
-          }}
-        >
+          }}>
           Create Paste
         </button>
 
@@ -122,15 +124,12 @@ export default function HomePage() {
             backgroundColor: "#f3f4f6",
             color: "#111",
             border: "1px solid #ccc",
-          }}
-        >
+          }}>
           Clear
         </button>
       </form>
 
-      {error && (
-        <p style={{ color: "#dc2626", marginTop: 12 }}>{error}</p>
-      )}
+      {error && <p style={{ color: "#dc2626", marginTop: 12 }}>{error}</p>}
 
       {link && (
         <p style={{ marginTop: 12 }}>
@@ -138,8 +137,7 @@ export default function HomePage() {
           <a
             href={link}
             target="_blank"
-            style={{ color: "#2563eb", textDecoration: "underline" }}
-          >
+            style={{ color: "#2563eb", textDecoration: "underline" }}>
             {window.location.origin + link}
           </a>
         </p>
