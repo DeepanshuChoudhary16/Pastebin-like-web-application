@@ -103,7 +103,7 @@ export default function HomePage() {
 
         <br />
         <br />
-        <p><i>Please wait for 5 seconds after clicking Create Paste button</i></p>
+        <p><i>Please wait for 4-5 seconds after clicking Create Paste button</i></p>
         <button
           type="submit"
           style={{
