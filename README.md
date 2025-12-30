@@ -32,30 +32,24 @@ MongoDB Atlas is used in production.
 ## Running the Project Locally
 
 ### 1. Clone the repository
-
 ```bash
 git clone https://github.com/DeepanshuChoudhary16/pastelink
 cd pastelink
 ```
 
 ### 2.Install dependencies
-
 ```bash
 npm install
 ```
-
 ### 3.Configure environment variables
-
 Create a file named .env.local in the project root:
 MONGODB_URI=your_mongodb_connection_string
 TEST_MODE=0
 
 ### 4.Start the development server
-
 ```bash
 npm run dev
 ```
-
 The application will be available at:
 🔗http://localhost:3000
 
@@ -74,22 +68,17 @@ pastelink/
 ├── lib/
 ├── models/
 
-NOT inside:
 
+NOT inside:
 - ❌ `app/`
 - ❌ `docs/`
 - ❌ `src/`
-
 ---
-
 ## ✅ How to double-check before submission
-
 Run these commands:
-
 ```bash
 ls
 ```
-
 You MUST see:
 
 README.md
@@ -102,3 +91,4 @@ If README.md is untracked:
 git add README.md
 git commit -m "Add README"
 git push
+
