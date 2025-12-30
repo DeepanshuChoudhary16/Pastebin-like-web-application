@@ -42,9 +42,33 @@ export default function HomePage() {
     setMaxViews("");
   }
 
+  function handleClear() {
+    setContent("");
+    setTtl("");
+    setMaxViews("");
+    setLink("");
+    setError("");
+  }
+
+  const inputStyle = {
+    width: "100%",
+    padding: "10px",
+    border: "1px solid #ccc",
+    borderRadius: "6px",
+    fontSize: "14px",
+  };
+
+  const buttonStyle = {
+    padding: "10px 16px",
+    borderRadius: "6px",
+    fontSize: "14px",
+    cursor: "pointer",
+    border: "1px solid transparent",
+  };
+
   return (
-    <main style={{ padding: 24, maxWidth: 600 }}>
-      <h1>Create a Paste</h1>
+    <main style={{ padding: 24, maxWidth: 600, margin: "auto" }}>
+      <h1 style={{ marginBottom: 16 }}>Create a Paste</h1>
 
       <form onSubmit={handleSubmit}>
         <textarea
@@ -52,7 +76,7 @@ export default function HomePage() {
           placeholder="Write your paste here..."
           value={content}
           onChange={(e) => setContent(e.target.value)}
-          style={{ width: "100%" }}
+          style={{ ...inputStyle, resize: "vertical" }}
         />
 
         <br /><br />
@@ -62,6 +86,7 @@ export default function HomePage() {
           placeholder="TTL (seconds, optional)"
           value={ttl}
           onChange={(e) => setTtl(e.target.value)}
+          style={inputStyle}
         />
 
         <br /><br />
@@ -71,19 +96,50 @@ export default function HomePage() {
           placeholder="Max views (optional)"
           value={maxViews}
           onChange={(e) => setMaxViews(e.target.value)}
+          style={inputStyle}
         />
 
         <br /><br />
 
-        <button type="submit">Create Paste</button>
+        <button
+          type="submit"
+          style={{
+            ...buttonStyle,
+            backgroundColor: "#2563eb",
+            color: "#fff",
+            border: "1px solid #2563eb",
+          }}
+        >
+          Create Paste
+        </button>
+
+        <button
+          type="button"
+          onClick={handleClear}
+          style={{
+            ...buttonStyle,
+            marginLeft: 12,
+            backgroundColor: "#f3f4f6",
+            color: "#111",
+            border: "1px solid #ccc",
+          }}
+        >
+          Clear
+        </button>
       </form>
 
-      {error && <p style={{ color: "red" }}>{error}</p>}
+      {error && (
+        <p style={{ color: "#dc2626", marginTop: 12 }}>{error}</p>
+      )}
 
       {link && (
-        <p>
+        <p style={{ marginTop: 12 }}>
           Paste link:{" "}
-          <a href={link} target="_blank">
+          <a
+            href={link}
+            target="_blank"
+            style={{ color: "#2563eb", textDecoration: "underline" }}
+          >
             {window.location.origin + link}
           </a>
         </p>
